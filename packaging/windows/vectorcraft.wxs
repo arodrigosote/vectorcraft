@@ -9,7 +9,7 @@
 
   Per-machine install with a setup wizard that names the version: Welcome, install folder (Program Files\VectorCraft by
   default, remembered for upgrades), Ready, a progress page, and a Finish page with a ticked
-  "Launch VectorCraft" box. Installs a Start Menu shortcut and an App Paths entry (so `vectorcraft`
+  "Launch ICASYS Vectores" box. Installs a Start Menu shortcut and an App Paths entry (so `vectorcraft`
   starts from the Run dialog), plus vectorcraft-cli. A Shortcuts page after the install folder offers
   a desktop shortcut (ticked). `msiexec /qn` still installs silently, with the desktop shortcut
   unless INSTALLDESKTOPSHORTCUT="" is passed.
@@ -17,25 +17,25 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
   <Package
-      Name="VectorCraft"
-      Manufacturer="Learning Machines LLC"
+      Name="ICASYS Vectores"
+      Manufacturer="ICASYS"
       Version="$(var.Version)"
       UpgradeCode="601C6437-08AE-4645-ADCC-27F036C2EA2F"
       Scope="perMachine"
       Compressed="yes"
       Language="1033">
-    <SummaryInformation Description="VectorCraft vector illustration app" Manufacturer="Learning Machines LLC" />
+    <SummaryInformation Description="ICASYS Vectores vector illustration app" Manufacturer="ICASYS" />
     <!-- Same-version upgrades let successive pre-releases of one X.Y.Z replace each other
          (MSI versions are numeric, so 1.2.3-rc.1 and 1.2.3-rc.2 are both 1.2.3). -->
     <MajorUpgrade AllowSameVersionUpgrades="yes"
-        DowngradeErrorMessage="A newer version of VectorCraft is already installed." />
+        DowngradeErrorMessage="A newer version of ICASYS Vectores is already installed." />
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
 
     <Icon Id="VectorcraftIcon.ico" SourceFile="$(var.IconPath)" />
     <Property Id="ARPPRODUCTICON" Value="VectorcraftIcon.ico" />
-    <Property Id="ARPURLINFOABOUT" Value="https://getartcraft.com/apps/vectorcraft" />
-    <Property Id="ARPURLUPDATEINFO" Value="https://getartcraft.com/apps/vectorcraft" />
-    <Property Id="ARPHELPLINK" Value="https://discord.gg/artcraft" />
+    <Property Id="ARPURLINFOABOUT" Value="https://icasys.mx" />
+    <Property Id="ARPURLUPDATEINFO" Value="https://icasys.mx" />
+    <Property Id="ARPHELPLINK" Value="https://icasys.mx" />
 
     <StandardDirectory Id="ProgramFiles6432Folder">
       <Directory Id="INSTALLFOLDER" Name="VectorCraft" />
@@ -48,7 +48,7 @@
       <RegistrySearch Id="PreviousInstallFolder" Root="HKLM" Key="Software\VectorCraft" Name="InstallDir" Type="raw" />
     </Property>
 
-    <Feature Id="Main" Title="VectorCraft" Level="1">
+    <Feature Id="Main" Title="ICASYS Vectores" Level="1">
       <ComponentGroupRef Id="VectorcraftFiles" />
       <ComponentRef Id="DesktopShortcut" />
     </Feature>
@@ -99,8 +99,8 @@
     <Property Id="VectorcraftVersion" Value="$(var.DisplayVersion)" />
 
     <!-- Finish page: say where to find the app, and offer to start it (ticked by default). -->
-    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="VectorCraft $(var.DisplayVersion) is installed. You can start it any time from the Start menu." />
-    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch VectorCraft" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="ICASYS Vectores $(var.DisplayVersion) is installed. You can start it any time from the Start menu." />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch ICASYS Vectores" />
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
     <Property Id="WixShellExecTarget" Value="[#VectorcraftExe]" />
     <!-- Runs in the wizard's own (unelevated) process, so the app starts as the user, not as admin. -->
@@ -111,8 +111,8 @@
     <ComponentGroup Id="VectorcraftFiles" Directory="INSTALLFOLDER">
       <Component Id="VectorcraftApp" Guid="0E8C6C5E-DE4A-4E1D-9DB0-44E8E38C2103">
         <File Id="VectorcraftExe" Source="$(var.BinDir)\vectorcraft.exe" KeyPath="yes">
-          <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="VectorCraft"
-              Description="VectorCraft vector illustration app" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
+          <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="ICASYS Vectores"
+              Description="ICASYS Vectores vector illustration app" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
               Icon="VectorcraftIcon.ico" IconIndex="0" />
         </File>
 
@@ -129,7 +129,7 @@
          app. A per-machine install puts it on the common desktop. `wix msi validate` reports ICE38,
          ICE43 and ICE57 for it: they take a desktop shortcut for per-user data, which it isn't here. -->
     <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="498F2D4C-E655-47F6-B406-2D4C449B8D26" Condition="INSTALLDESKTOPSHORTCUT">
-      <Shortcut Id="DesktopShortcut" Name="VectorCraft" Description="VectorCraft vector illustration app"
+      <Shortcut Id="DesktopShortcut" Name="ICASYS Vectores" Description="ICASYS Vectores vector illustration app"
           Target="[#VectorcraftExe]" WorkingDirectory="INSTALLFOLDER" Icon="VectorcraftIcon.ico" IconIndex="0" />
       <RegistryValue Root="HKLM" Key="Software\VectorCraft" Name="DesktopShortcut" Value="1" Type="integer" KeyPath="yes" />
     </Component>

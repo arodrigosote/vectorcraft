@@ -5,7 +5,7 @@
 //! desktop compositor still reserves that frame for the window surface: the content is drawn
 //! offset by the caption and border while the pointer keeps the un-offset client coordinates, so
 //! it no longer points at what is drawn under it (rust-windowing/winit#2419; PhotoCraft fixed the
-//! same in storytold/photocraft#2401). [`service`] strips the two styles and has Windows
+//! same in arodrigosote/photocraft#2401). [`service`] strips the two styles and has Windows
 //! recalculate the frame; winit puts them back whenever it changes the window flags (maximize,
 //! restore, …), so the returned guard runs every frame.
 

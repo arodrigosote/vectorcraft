@@ -38,7 +38,7 @@ impl PaletteFormat {
     }
     pub fn label(self) -> &'static str {
         match self {
-            PaletteFormat::Native => "VectorCraft Swatches (.vcswatches)",
+            PaletteFormat::Native => "ICASYS Vectores Swatches (.vcswatches)",
             PaletteFormat::Gpl => "GPL Palette (.gpl)",
             PaletteFormat::Ase => "Swatch Exchange (.ase)",
             PaletteFormat::Css => "CSS Custom Properties (.css)",
