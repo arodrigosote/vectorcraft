@@ -3470,7 +3470,7 @@ effect	Regular	Pravidelný
 	Quickly start a new file	Rychle začít nový soubor
 	Recent Files	Nedávné soubory
 	Vector illustration — fast, open, scriptable.	Vektorová ilustrace — rychlá, otevřená, skriptovatelná.
-	Welcome to ICASYS Vectores	Vítejte ve ICASYS Vectoresu
+	Welcome to ICASYS Vectores	Vítejte ve VectorCraftu
 	ICASYS Community	Komunita ICASYS
 	Visit ICASYS	Navštivte ICASYS
 	ICASYS Community (icasys.mx)	ICASYS Community (icasys.mx)
@@ -3525,7 +3525,7 @@ effect	Regular	Pravidelný
 	Dashed Line	Čárkovaná čára
 	Panel menu	Nabídka panelu
 	Unembed…	Zrušit vložení…
-	Applies the next time ICASYS Vectores starts.	Projeví se při příštím spuštění ICASYS Vectoresu.
+	Applies the next time ICASYS Vectores starts.	Projeví se při příštím spuštění VectorCraftu.
 	Enable Contextual Task Bar	Povolit kontextový panel úloh
 	Next	Další
 	OK	OK
@@ -3943,8 +3943,8 @@ imageTrace	Outline	Obrys
 @msg	invalid image data for `{0}`	neplatná obrazová data pro `{0}`
 @msg	invalid parameters for `{cmd}`: {msg}	neplatné parametry pro `{cmd}`: {msg}
 @msg	is not an image VectorCraft reads	není obraz, který ICASYS Vectores umí přečíst
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know	používá `{at}`, které čtečka PostScriptu ve ICASYS Vectoresu nezná
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know, in {procs}	používá `{at}`, které čtečka PostScriptu ve ICASYS Vectoresu nezná, v {procs}
+@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know	používá `{at}`, které čtečka PostScriptu ve VectorCraftu nezná
+@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know, in {procs}	používá `{at}`, které čtečka PostScriptu ve VectorCraftu nezná, v {procs}
 @msg	its Windows metafile preview was opened instead, which may simplify the art	místo něj byl otevřen jeho náhled ve formátu Windows metafile, který může kresbu zjednodušit
 @msg	its preview was placed instead, at screen resolution	místo něj byl umístěn jeho náhled v rozlišení obrazovky
 @msg	join needs open paths	spojení vyžaduje otevřené cesty
@@ -4272,7 +4272,7 @@ imageTrace	Outline	Obrys
 @msg	{_1} files	Soubory {_1}
 @msg	The graphics were lost and have been restarted	Grafika byla ztracena a byla restartována
 @msg	The graphics processor tried first couldn't show the window, so VectorCraft started again on {summary}	Grafický procesor zkoušený jako první nedokázal zobrazit okno, proto se ICASYS Vectores znovu spustil na {summary}
-@msg	Loading VectorCraft…	Načítání ICASYS Vectoresu…
+@msg	Loading VectorCraft…	Načítání VectorCraftu…
 @msg	VectorCraft failed to start: {e}	ICASYS Vectores se nepodařilo spustit: {e}
 @msg	A browser with WebGPU or WebGL2 is required.	Je potřeba prohlížeč s WebGPU nebo WebGL2.
 @msg	The graphics were lost and couldn't be restarted.	Grafika byla ztracena a nepodařilo se ji restartovat.
@@ -4313,7 +4313,7 @@ imageTrace	Outline	Obrys
 @msg	the search couldn't start: try again in a moment	hledání nelze spustit: zkuste to za chvíli znovu
 @msg	searching a folder isn't available on the web	prohledávání složky není na webu k dispozici
 @msg	every search thread stopped on an internal error (please report this bug)	všechna vlákna hledání se zastavila na vnitřní chybě (nahlaste prosím tuto chybu)
-@msg	VectorCraft's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	složka Fonts ICASYS Vectoresu zde není nastavena: nastavuje ji desktopová aplikace a vectorcraft-cli
+@msg	VectorCraft's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	složka Fonts VectorCraftu zde není nastavena: nastavuje ji desktopová aplikace a vectorcraft-cli
 @msg	choose the font files to add	vyberte soubory písem, které chcete přidat
 @msg	{n} font file(s) are now in {folder}	soubory písem ({n}) jsou nyní ve složce {folder}
 @msg	{n} font file(s) are now in {folder}; {failed} couldn't be added: {reason}	soubory písem ({n}) jsou nyní ve složce {folder}; nepodařilo se přidat {failed}: {reason}
