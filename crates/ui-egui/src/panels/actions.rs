@@ -2699,7 +2699,7 @@ mod tests {
             (json!(" ".repeat(files::MAX_SET_FILE + 1)), "the action set file is larger than 8 MiB"),
             (
                 json!("{\"format\": \"vcactions\", \"version\": 4, \"name\": \"S\", \"actions\": []}"),
-                "the action set file needs a later version of VectorCraft",
+                "the action set file needs a later version of ICASYS Vectores",
             ),
         ] {
             assert_eq!(app.run(LOAD_SET, json!({ "data": data })).unwrap_err(), want);
@@ -2904,7 +2904,7 @@ mod tests {
         assert_eq!(app.ui.action_sets[3].actions[0].steps, [("object.group".to_string(), json!({}))]);
     }
 
-    /// A set loaded from another app's file saves to VectorCraft's own file with its excluded steps,
+    /// A set loaded from another app's file saves to ICASYS Vectores's own file with its excluded steps,
     /// and loads back the same.
     #[test]
     fn another_apps_set_saves_and_loads_back_with_its_excluded_steps() {
@@ -4394,7 +4394,7 @@ mod tests {
             assert_eq!(files::read_set(&old.to_string(), "Test").unwrap().actions[0].steps.len(), 1, "version {version}");
         }
         let later = json!({"format": "vcactions", "version": 4, "name": "New", "actions": []});
-        assert_eq!(files::read_set(&later.to_string(), "Test").unwrap_err(), "the action set file needs a later version of VectorCraft");
+        assert_eq!(files::read_set(&later.to_string(), "Test").unwrap_err(), "the action set file needs a later version of ICASYS Vectores");
         for params in [json!({"message": 5}), json!({"allowContinue": "yes"}), json!(42)] {
             let stop = json!({"command": "action.stop", "params": params});
             for step in [stop.clone(), json!({"command": "command.batch", "params": {"commands": [stop]}})] {

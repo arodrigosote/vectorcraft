@@ -87,7 +87,7 @@ pub enum Error {
     #[error("cancelled")]
     Cancelled,
     /// Safe Mode is on ([`safe_mode`]): no plug-in loads or runs.
-    #[error("Safe Mode is on: plug-ins don't load or run until VectorCraft starts normally")]
+    #[error("Safe Mode is on: plug-ins don't load or run until ICASYS Vectores starts normally")]
     SafeMode,
     #[error("{0}")]
     Io(String),

@@ -305,7 +305,7 @@ pub(super) fn members(link: &Link, info: RunInfo, localization: &Rc<Localization
         ("buildDate".into(), value(Data::Null)),
         ("colorPicker".into(), fail("$.colorPicker: scripts cannot show a dialog yet")),
         ("decimalPoint".into(), decimal),
-        ("engineName".into(), value(text(info.engine.unwrap_or_else(|| "VectorCraft".into())))),
+        ("engineName".into(), value(text(info.engine.unwrap_or_else(|| "ICASYS Vectores".into())))),
         ("error".into(), HostItem::Script(ScriptItem::LastError)),
         ("flags".into(), flags),
         ("gc".into(), HostItem::Function(function(|_| Ok(Data::Undefined)))),

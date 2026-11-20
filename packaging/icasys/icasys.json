@@ -1,0 +1,10 @@
+{
+  "app": "vectorcraft",
+  "name": "ICASYS Vectores",
+  "slug": "vectores",
+  "upstream_name": "VectorCraft",
+  "upstream_base": "f4922aa7ac99a4f6d56fc68a83a44945207ec610",
+  "owner": "arodrigosote",
+  "es_ui": true,
+  "deb_section": "graphics"
+}

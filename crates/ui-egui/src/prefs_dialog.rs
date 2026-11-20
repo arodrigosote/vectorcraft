@@ -527,7 +527,7 @@ fn category_fields(ui: &mut egui::Ui, app: &mut VectorcraftApp, d: &mut Dialog, 
                     // The window's decorations are chosen once, when the app starts. On Linux and the
                     // BSDs the note goes under the next row, which also applies at the next start.
                     if !APP_TITLE_BAR_SHOWN {
-                        ui.label(egui::RichText::new(tl!("Applies the next time VectorCraft starts.")).color(t.text_dim).size(11.0));
+                        ui.label(egui::RichText::new(tl!("Applies the next time ICASYS Vectores starts.")).color(t.text_dim).size(11.0));
                     }
                 }
             }
@@ -547,7 +547,7 @@ fn category_fields(ui: &mut egui::Ui, app: &mut VectorcraftApp, d: &mut Dialog, 
                     let note = if from_env {
                         tl!("The VECTORCRAFT_TITLEBAR environment variable chooses the title bar while it is set.")
                     } else {
-                        tl!("Applies the next time VectorCraft starts.")
+                        tl!("Applies the next time ICASYS Vectores starts.")
                     };
                     ui.label(egui::RichText::new(note).color(t.text_dim).size(11.0));
                 }
@@ -605,7 +605,7 @@ fn category_fields(ui: &mut egui::Ui, app: &mut VectorcraftApp, d: &mut Dialog, 
                 choice_row(ui, d, sp.key, sp.label, opts, &v);
                 if sp.key == "gpuPreference" || sp.key == "linuxDisplayServer" {
                     // The window's graphics device and display server are chosen once, when the app starts.
-                    ui.label(egui::RichText::new(tl!("Applies the next time VectorCraft starts.")).color(t.text_dim).size(11.0));
+                    ui.label(egui::RichText::new(tl!("Applies the next time ICASYS Vectores starts.")).color(t.text_dim).size(11.0));
                 }
                 if sp.key == "linuxDisplayServer" {
                     // Many Wayland desktops give a drawing tablet's pen to the window only through XWayland (#2028).
@@ -687,7 +687,7 @@ fn choose_folder(app: &mut VectorcraftApp, d: &mut Dialog, key: &'static str) {
 }
 
 /// The file name Export Preferences… suggests.
-const PREFS_FILE_NAME: &str = "VectorCraft Preferences.json";
+const PREFS_FILE_NAME: &str = "ICASYS Vectores Preferences.json";
 
 /// Export Preferences…: the applied preferences (`prefs.export`) go to a file picked in a save
 /// dialog (the web downloads it). Changes in the dialog not yet applied with OK are not in it.

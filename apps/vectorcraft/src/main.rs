@@ -441,11 +441,11 @@ fn main() -> std::process::ExitCode {
     let run = |options: eframe::NativeOptions, app_creator: eframe::AppCreator<'_>| {
         #[cfg(target_os = "linux")]
         {
-            linux_stylus::run_native("VectorCraft", options, app_creator)
+            linux_stylus::run_native("ICASYS Vectores", options, app_creator)
         }
         #[cfg(not(target_os = "linux"))]
         {
-            eframe::run_native("VectorCraft", options, app_creator)
+            eframe::run_native("ICASYS Vectores", options, app_creator)
         }
     };
     let outcome = vectorcraft_engine::guard::catch_panic(|| {
@@ -526,10 +526,10 @@ fn main() -> std::process::ExitCode {
                     } else if let Some(crash) = &crash {
                         app.status(match crash {
                             gpu::Crash::Adapter { name, .. } => format!(
-                                "The last start of VectorCraft ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
+                                "The last start of ICASYS Vectores ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
                             ),
                             gpu::Crash::Listing => format!(
-                                "The last start of VectorCraft ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
+                                "The last start of ICASYS Vectores ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
                             ),
                         });
                     }

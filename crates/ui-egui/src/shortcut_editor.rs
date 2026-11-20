@@ -21,7 +21,7 @@ use crate::state::{Dialog, UiState};
 use crate::theme::{self, Tokens};
 use crate::{VectorcraftApp, menus, widgets};
 
-pub const PRESETS: &[&str] = &["VectorCraft Defaults", "Classic Defaults"];
+pub const PRESETS: &[&str] = &["ICASYS Vectores Defaults", "Classic Defaults"];
 pub const CUSTOM: &str = "Custom";
 /// Set names earlier versions saved: (old name, current name).
 pub const LEGACY_PRESETS: &[(&str, &str)] = &[("Illustrator Defaults", "Classic Defaults")]; // brand-ok: legacy preference value
@@ -871,7 +871,7 @@ pub fn export_json(set: &str, overrides: &Overrides) -> Value {
 }
 
 pub fn import_json(v: &Value) -> Result<(String, Overrides), String> {
-    let o = v.get("overrides").and_then(Value::as_object).ok_or("not a VectorCraft shortcut set (missing `overrides`)")?;
+    let o = v.get("overrides").and_then(Value::as_object).ok_or("not a ICASYS Vectores shortcut set (missing `overrides`)")?;
     let mut out = Overrides::new();
     for (k, v) in o {
         let s = v.as_str().ok_or_else(|| format!("shortcut for `{k}` must be a string"))?;
@@ -1766,7 +1766,7 @@ mod tests {
         let mut ov = Overrides::new();
         crate::keymap::set_override(&mut ov, "edit.preferences", "Ctrl+Alt+Shift+9");
         let (text, km, tool_rows, menu_rows) = with_steady_plugins(|| {
-            let text = export_text("VectorCraft Defaults", &ov);
+            let text = export_text("ICASYS Vectores Defaults", &ov);
             let km = keymap_with(&ov);
             let names = |tools: bool| -> Vec<String> {
                 entries()
@@ -1779,7 +1779,7 @@ mod tests {
             (text, km, rows.0, rows.1)
         });
         let lines: Vec<&str> = text.lines().collect();
-        assert_eq!(lines[..4], ["Keyboard Shortcuts", "Set: VectorCraft Defaults", "", "Tools"]);
+        assert_eq!(lines[..4], ["Keyboard Shortcuts", "Set: ICASYS Vectores Defaults", "", "Tools"]);
         let menu_at = lines.iter().position(|l| *l == "Menu Commands").expect("a Menu Commands section");
         assert_eq!(lines[menu_at - 1], "", "a blank line before Menu Commands");
         let names_of = |rows: &[&str]| -> Vec<String> { rows.iter().map(|l| format!("{}\t", l.split('\t').next().unwrap_or_default())).collect() };

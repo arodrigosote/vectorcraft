@@ -124,7 +124,7 @@ pub fn read_set(text: &str, name: &str) -> Result<ActionSet, String> {
         return Err("not an action set file".into());
     }
     if !matches!(f.version, 1..=3) {
-        return Err("the action set file needs a later version of VectorCraft".into());
+        return Err("the action set file needs a later version of ICASYS Vectores".into());
     }
     if f.actions.len() > MAX_SET_ACTIONS {
         return Err("the action set file holds more than 1,000 actions".into());
@@ -353,7 +353,7 @@ fn load_aia(app: &mut VectorcraftApp, params: Value) -> Result<Value, String> {
 /// larger than 8 MiB is refused after its first 8 MiB and one byte are read.
 ///
 /// An action set another app saved as text (`.aia`, read with `actionSet.read`) comes in with its
-/// actions and the steps that stand for a VectorCraft command ([`step_name`], [`step_commands`]),
+/// actions and the steps that stand for a ICASYS Vectores command ([`step_name`], [`step_commands`]),
 /// with no params; a step that is off in the file is excluded from playback. A set with no name is
 /// called after the file, else `Actions`. The other steps are left out and listed, and the status
 /// bar says how many → `{set, name, actions, skipped: [{action, step}] (at most 1,000), leftOut: n}`.

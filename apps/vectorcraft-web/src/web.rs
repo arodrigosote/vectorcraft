@@ -188,7 +188,7 @@ fn detect_language() {
     }
     i18n::set_system_locales(tags.as_slice());
     if let Some(el) = element(LOADING_ID) {
-        el.set_text_content(Some(i18n::message(i18n::system_lang(), "Loading VectorCraft…").as_str()));
+        el.set_text_content(Some(i18n::message(i18n::system_lang(), "Loading ICASYS Vectores…").as_str()));
     }
 }
 
