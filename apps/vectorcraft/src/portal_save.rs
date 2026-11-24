@@ -7,7 +7,7 @@
 //! `current_filter`, reads the one picked back, and answers its first extension after the path
 //! ([`vectorcraft_ui_egui::picks::PickAnswer`]); the app gives the name that type's extension.
 //! rfd shows the dialog when the portal can't (no session bus, no file chooser), with zenity as its
-//! own fallback. PhotoCraft's `portal_save.rs` (storytold/photocraft#6151) makes the same call.
+//! own fallback. PhotoCraft's `portal_save.rs` (arodrigosote/photocraft#6151) makes the same call.
 //!
 //! The dialog's parent is the window: `x11:<window id>` on X11, and on Wayland (Linux) a handle
 //! from the compositor's xdg-foreign protocol, as rfd names it (its `window_identifier`).
@@ -341,7 +341,7 @@ mod tests {
             name: "Untitled-1.vectorcraft".into(),
             folder: Some("/home/me/Art".into()),
             filters: vec![
-                FilePick::filter("VectorCraft", &["vectorcraft"]),
+                FilePick::filter("ICASYS Vectores", &["vectorcraft"]),
                 FilePick::filter("SVG", &["svg"]),
                 FilePick::filter("PDF-compatible .ai", &["ai"]),
             ],
@@ -355,9 +355,9 @@ mod tests {
     fn the_request_names_the_file_type_the_dialog_starts_on() {
         let request = request();
         let o = options(&request, "t1");
-        assert_eq!(o.get("current_filter"), Some(&Value::from(("VectorCraft".to_string(), vec![(0u32, "*.vectorcraft".to_string())]))));
+        assert_eq!(o.get("current_filter"), Some(&Value::from(("ICASYS Vectores".to_string(), vec![(0u32, "*.vectorcraft".to_string())]))));
         let filters = vec![
-            ("VectorCraft".to_string(), vec![(0u32, "*.vectorcraft".to_string())]),
+            ("ICASYS Vectores".to_string(), vec![(0u32, "*.vectorcraft".to_string())]),
             ("SVG".to_string(), vec![(0u32, "*.svg".to_string())]),
             ("PDF-compatible .ai".to_string(), vec![(0u32, "*.ai".to_string())]),
         ];
@@ -596,7 +596,7 @@ mod tests {
         let labels: Vec<&str> = request.filters.iter().map(|(l, _)| l.as_str()).collect();
         let lang = vectorcraft_ui_egui::i18n::current();
         let expected: Vec<&str> =
-            ["VectorCraft", "SVG", "PDF-compatible .ai"].iter().map(|l| vectorcraft_ui_egui::i18n::tr_ctx(lang, "file-filter", l)).collect();
+            ["ICASYS Vectores", "SVG", "PDF-compatible .ai"].iter().map(|l| vectorcraft_ui_egui::i18n::tr_ctx(lang, "file-filter", l)).collect();
         assert_eq!(labels, expected);
         assert_eq!(request.parent, "x11:3a0000f");
     }

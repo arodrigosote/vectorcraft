@@ -47,7 +47,7 @@ fn prefs_path_with(os: &str, legacy: bool, env: impl Fn(&str) -> Option<OsString
 
 /// The platform's settings folder of VectorCraft, or of DrawCraft (`legacy`).
 fn platform_dir(os: &str, legacy: bool, env: &impl Fn(&str) -> Option<OsString>) -> Option<PathBuf> {
-    let (name, lower) = if legacy { ("DrawCraft", "drawcraft") } else { ("VectorCraft", "vectorcraft") };
+    let (name, lower) = if legacy { ("DrawCraft", "drawcraft") } else { ("ICASYS Vectores", "vectorcraft") };
     match os {
         "macos" => env("HOME").map(|p| PathBuf::from(p).join("Library/Application Support").join(name)),
         "windows" => env("APPDATA").map(|p| PathBuf::from(p).join(name)),

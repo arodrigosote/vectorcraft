@@ -208,7 +208,7 @@ pub const POSTSCRIPT_ERRORS: &[(&str, &str)] = &[
 /// (`fault`).
 fn reason(e: &PsError, fault: Option<&Fault>) -> String {
     let what = match e {
-        PsError::Ps("undefined", at) => format!("it uses `{at}`, which VectorCraft's PostScript reader doesn't know"),
+        PsError::Ps("undefined", at) => format!("it uses `{at}`, which ICASYS Vectores's PostScript reader doesn't know"),
         PsError::Ps(name, at) => {
             let detail = match fault.and_then(|f| f.op) {
                 Some(op) if at.is_empty() || at == op => format!("{name} in `{op}`"),

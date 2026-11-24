@@ -146,3 +146,9 @@ Indic hyphenation patterns (crates/text/patterns/):
 Copyright (C) 2016 Santhosh Thottingal, used under the MIT license option.
 Original copyright and full license notices are preserved in each hyph-*.tex file.
 Source: hyphenation/tex-hyphen, commit 5684c0f51c0b81133db2efbe60a408b4155a3ff5.
+
+ICASYS edition
+
+This is a modified version of VectorCraft, published by ICASYS (https://icasys.mx).
+It is based on VectorCraft by the ArtCraft team and community. The ArtCraft name and logos are not used.
+See ICASYS.md.

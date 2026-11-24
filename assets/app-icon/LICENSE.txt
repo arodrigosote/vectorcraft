@@ -1,12 +1,7 @@
-VectorCraft app icon (vectorcraft.svg, vectorcraft-small.svg and every file derived from them in this
-directory: vectorcraft-1024.png, vectorcraft-macos-512.png, vectorcraft.icns, vectorcraft.ico, hicolor/).
+ICASYS app icon (every file in this directory).
 
-Original artwork made for this project by the project owner, drawn in ArtCraft and vectorised for
-VectorCraft (no third-party material). Licensed like the rest of VectorCraft, under either of
+The ICASYS name and isotype are trademarks of ICASYS (https://icasys.mx). They are NOT covered by the
+MIT / Apache-2.0 licence of this project: you may not use them to identify any other product or
+organisation. They appear here only to identify this ICASYS edition.
 
-  * Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
-  * MIT license (https://opensource.org/licenses/MIT)
-
-at your option.
-
-Regenerate the derived files with packaging/icons.sh.
+The upstream icon was replaced; the original artwork is not part of this edition.

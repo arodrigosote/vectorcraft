@@ -201,7 +201,7 @@ fn edit_original_opens_raster_images_in_photocraft_without_system_defaults() {
     crate::io::open_original(&mut app, "/Art/plan.emf").unwrap();
     assert_eq!(*opened.borrow(), [(false, path.clone()), (true, path.clone()), (false, path), (false, "/Art/plan.emf".to_string())]);
     // PhotoCraft failing to open it is said, not hidden behind the system's app.
-    app.services.open_in_photocraft = Some(Box::new(|_: &str| Err("PhotoCraft didn't start".to_string())));
+    app.services.open_in_photocraft = Some(Box::new(|_: &str| Err("ICASYS Foto didn't start".to_string())));
     assert!(app.run("links.editOriginal", json!({"id": linked})).is_err());
     assert_eq!(opened.borrow().len(), 4);
 }

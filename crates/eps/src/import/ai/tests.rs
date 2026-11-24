@@ -2883,11 +2883,11 @@ fn images_with_alpha_channels() {
     assert!(art(&r.doc).is_empty() && r.warnings.iter().any(|w| w.contains("cut short")));
 }
 
-/// Editing data `data` opens without its one image and with the warning "an image VectorCraft can't read was left out" once.
+/// Editing data `data` opens without its one image and with the warning "an image ICASYS Vectores can't read was left out" once.
 fn image_left_out_with_a_warning(data: &[u8]) {
     let r = read(data).unwrap();
     assert!(art(&r.doc).is_empty(), "{:#?}", art(&r.doc));
-    let left_out = r.warnings.iter().filter(|w| *w == "an image VectorCraft can't read was left out").count();
+    let left_out = r.warnings.iter().filter(|w| *w == "an image ICASYS Vectores can't read was left out").count();
     assert_eq!(left_out, 1, "{:?}", r.warnings);
 }
 
@@ -3034,7 +3034,7 @@ fn a_version_7_linked_image_without_its_file_name_is_left_out_with_a_warning() {
         let a = art(&r.doc);
         assert_eq!(a.len(), body.matches(" XI\n").count(), "{what}: {:?}", r.warnings);
         assert!(a.iter().all(|n| matches!(&n.kind, NodeKind::Image(im) if im.link.is_none())), "{what}: the embedded images only");
-        let left_out = r.warnings.iter().filter(|w| *w == "an image VectorCraft can't read was left out").count();
+        let left_out = r.warnings.iter().filter(|w| *w == "an image ICASYS Vectores can't read was left out").count();
         assert_eq!(left_out, 1, "{what}: {:?}", r.warnings);
         assert!(!r.warnings.iter().any(|w| w == read::LINKED_PLACEHOLDERS), "{what}: {:?}", r.warnings);
     }
@@ -4578,7 +4578,7 @@ fn legacy_linked_area_frames_cap_their_copied_tab_stops() {
 }
 
 /// The warning when linked areas are left out.
-const LINKED_AREAS_LEFT_OUT: &str = "linked type areas past VectorCraft's limits were left out";
+const LINKED_AREAS_LEFT_OUT: &str = "linked type areas past ICASYS Vectores's limits were left out";
 const DIRECTION_CHANGE_LEFT_OUT: &str = "type that changes writing direction inside a text object opens in the direction of its first character";
 
 /// The frames of linked areas times the characters of their story are kept to the reader's

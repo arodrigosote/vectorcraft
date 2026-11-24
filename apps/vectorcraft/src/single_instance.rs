@@ -201,7 +201,7 @@ fn forward(path: &Path, files: &[String]) -> io::Result<()> {
     stream.set_write_timeout(Some(CLIENT_TIMEOUT))?;
     // The token and the paths go only to a listener that knows the greeting.
     if !same(read_message(&stream)?.get("hello"), &endpoint.hello) {
-        return Err(invalid("the listener isn't VectorCraft"));
+        return Err(invalid("the listener isn't ICASYS Vectores"));
     }
     write_message(&stream, &json!({ "token": endpoint.token, "files": files }))?;
     match read_message(&stream)?.get("ok") {

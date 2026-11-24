@@ -49,7 +49,7 @@ fn each_member_has_its_value() {
         ("$.build", json!(version)),
         ("$.buildDate", json!(null)),
         ("$.decimalPoint", json!(".")),
-        ("$.engineName", json!("VectorCraft")),
+        ("$.engineName", json!("ICASYS Vectores")),
         ("$.error", json!(null)),
         ("$.flags", json!(0)),
         ("$.gc() === undefined", json!(true)),

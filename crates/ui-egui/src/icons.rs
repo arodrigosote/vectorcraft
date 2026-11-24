@@ -181,7 +181,7 @@ mod tests {
     }
 
     /// Appearance (effects) and Pathfinder both lived in the icon column; they used the same
-    /// overlapping-squares motif (storytold/vectorcraft#2681).
+    /// overlapping-squares motif (arodrigosote/vectorcraft#2681).
     #[test]
     fn appearance_panel_icon_is_not_the_pathfinder_icon() {
         let appearance = String::from_utf8_lossy(include_bytes!("../../../assets/icons/dc-appearance.svg"));
@@ -224,7 +224,7 @@ mod tests {
         let unique: std::collections::BTreeSet<_> = names.iter().collect();
         assert_eq!(unique.len(), tools.len(), "{names:?}");
         for name in &names {
-            assert!(name.starts_with("dc-"), "{name} is drawn for VectorCraft");
+            assert!(name.starts_with("dc-"), "{name} is drawn for ICASYS Vectores");
             assert!(exists(name), "{name}");
         }
     }

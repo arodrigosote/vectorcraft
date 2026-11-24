@@ -21,7 +21,7 @@ use crate::state::{Dialog, UiState};
 use crate::theme::{self, Tokens};
 use crate::{VectorcraftApp, menus, widgets};
 
-pub const PRESETS: &[&str] = &["VectorCraft Defaults", "Classic Defaults"];
+pub const PRESETS: &[&str] = &["ICASYS Vectores Defaults", "Classic Defaults"];
 pub const CUSTOM: &str = "Custom";
 /// Set names earlier versions saved: (old name, current name).
 pub const LEGACY_PRESETS: &[(&str, &str)] = &[("Illustrator Defaults", "Classic Defaults")]; // brand-ok: legacy preference value
@@ -871,7 +871,7 @@ pub fn export_json(set: &str, overrides: &Overrides) -> Value {
 }
 
 pub fn import_json(v: &Value) -> Result<(String, Overrides), String> {
-    let o = v.get("overrides").and_then(Value::as_object).ok_or("not a VectorCraft shortcut set (missing `overrides`)")?;
+    let o = v.get("overrides").and_then(Value::as_object).ok_or("not a ICASYS Vectores shortcut set (missing `overrides`)")?;
     let mut out = Overrides::new();
     for (k, v) in o {
         let s = v.as_str().ok_or_else(|| format!("shortcut for `{k}` must be a string"))?;
@@ -1010,7 +1010,7 @@ pub fn run_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Resu
             let bytes = serde_json::to_vec_pretty(&v).unwrap_or_default();
             let pick = crate::FilePick {
                 filters: vec![crate::FilePick::filter("Shortcut sets", &["json"])],
-                ..crate::FilePick::named("VectorCraft Shortcuts.json")
+                ..crate::FilePick::named("ICASYS Vectores Shortcuts.json")
             };
             let path = path.or_else(|| crate::picks::save(app, &pick));
             match path {
@@ -1021,7 +1021,7 @@ pub fn run_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Resu
                 // Its save dialog is open: the file is written when it answers.
                 None if app.file_dialog_open() => Err("cancelled".into()),
                 None => match app.services.download.as_mut() {
-                    Some(dl) => dl("VectorCraft Shortcuts.json", &bytes).map(|()| Value::Null),
+                    Some(dl) => dl("ICASYS Vectores Shortcuts.json", &bytes).map(|()| Value::Null),
                     None => Ok(v),
                 },
             }
@@ -1037,7 +1037,7 @@ pub fn run_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Resu
             };
             let text = export_text(&app.ui.shortcut_set, &app.ui.shortcut_overrides);
             let pick =
-                crate::FilePick { filters: vec![crate::FilePick::filter("Text", &["txt"])], ..crate::FilePick::named("VectorCraft Shortcuts.txt") };
+                crate::FilePick { filters: vec![crate::FilePick::filter("Text", &["txt"])], ..crate::FilePick::named("ICASYS Vectores Shortcuts.txt") };
             match path.or_else(|| crate::picks::save(app, &pick)) {
                 Some(path) => match app.services.write.as_mut() {
                     Some(w) => w(&path, text.as_bytes()).map(|_| json!({"path": path})),
@@ -1046,7 +1046,7 @@ pub fn run_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Resu
                 // Its save dialog is open: the file is written when it answers.
                 None if app.file_dialog_open() => Err("cancelled".into()),
                 None => match app.services.download.as_mut() {
-                    Some(dl) => dl("VectorCraft Shortcuts.txt", text.as_bytes()).map(|()| Value::Null),
+                    Some(dl) => dl("ICASYS Vectores Shortcuts.txt", text.as_bytes()).map(|()| Value::Null),
                     None => Ok(json!({"text": text})),
                 },
             }
@@ -1766,7 +1766,7 @@ mod tests {
         let mut ov = Overrides::new();
         crate::keymap::set_override(&mut ov, "edit.preferences", "Ctrl+Alt+Shift+9");
         let (text, km, tool_rows, menu_rows) = with_steady_plugins(|| {
-            let text = export_text("VectorCraft Defaults", &ov);
+            let text = export_text("ICASYS Vectores Defaults", &ov);
             let km = keymap_with(&ov);
             let names = |tools: bool| -> Vec<String> {
                 entries()
@@ -1779,7 +1779,7 @@ mod tests {
             (text, km, rows.0, rows.1)
         });
         let lines: Vec<&str> = text.lines().collect();
-        assert_eq!(lines[..4], ["Keyboard Shortcuts", "Set: VectorCraft Defaults", "", "Tools"]);
+        assert_eq!(lines[..4], ["Keyboard Shortcuts", "Set: ICASYS Vectores Defaults", "", "Tools"]);
         let menu_at = lines.iter().position(|l| *l == "Menu Commands").expect("a Menu Commands section");
         assert_eq!(lines[menu_at - 1], "", "a blank line before Menu Commands");
         let names_of = |rows: &[&str]| -> Vec<String> { rows.iter().map(|l| format!("{}\t", l.split('\t').next().unwrap_or_default())).collect() };

@@ -37,9 +37,9 @@
     <string>zh-Hant</string>
   </array>
   <key>CFBundleDisplayName</key>
-  <string>VectorCraft</string>
+  <string>ICASYS Vectores</string>
   <key>CFBundleName</key>
-  <string>VectorCraft</string>
+  <string>ICASYS Vectores</string>
   <key>CFBundleExecutable</key>
   <string>VectorCraft</string>
   <key>CFBundleIdentifier</key>
@@ -83,13 +83,13 @@
   <key>CFBundleDocumentTypes</key>
   <array>
     <dict>
-      <key>CFBundleTypeName</key><string>VectorCraft Document</string>
+      <key>CFBundleTypeName</key><string>ICASYS Vectores Document</string>
       <key>LSItemContentTypes</key><array><string>ai.storyteller.vectorcraft.document</string></array>
       <key>CFBundleTypeRole</key><string>Editor</string>
       <key>LSHandlerRank</key><string>Owner</string>
     </dict>
     <dict>
-      <key>CFBundleTypeName</key><string>VectorCraft Template</string>
+      <key>CFBundleTypeName</key><string>ICASYS Vectores Template</string>
       <key>CFBundleTypeExtensions</key><array><string>vctemplate</string></array>
       <key>CFBundleTypeRole</key><string>Editor</string>
       <key>LSHandlerRank</key><string>Owner</string>
@@ -155,7 +155,7 @@
       <key>UTTypeIdentifier</key>
       <string>ai.storyteller.vectorcraft.document</string>
       <key>UTTypeDescription</key>
-      <string>VectorCraft Document</string>
+      <string>ICASYS Vectores Document</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

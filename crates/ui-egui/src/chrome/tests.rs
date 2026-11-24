@@ -736,7 +736,7 @@ fn the_artboard_navigator_goes_to_artboards_and_fitting_shows_the_current_one() 
     assert!(app.run("view.goToArtboard", json!({"index": "sideways"})).is_err());
 }
 
-/// storytold/vectorcraft#2719: status-bar 100% matches Actual Size when Display Print Size is on.
+/// arodrigosote/vectorcraft#2719: status-bar 100% matches Actual Size when Display Print Size is on.
 #[test]
 fn set_zoom_100_matches_actual_size_with_display_print_size() {
     let mut app = crate::VectorcraftApp::new(Session::new(), Default::default());
@@ -1518,17 +1518,17 @@ fn a_desktop_frame_hides_the_mark_whatever_the_preference_says() {
 
 #[test]
 fn window_title_with_no_document_is_the_app_name() {
-    assert_eq!(super::window_title(&title_test_app(true)), "VectorCraft");
+    assert_eq!(super::window_title(&title_test_app(true)), "ICASYS Vectores");
 }
 
 #[test]
 fn window_title_follows_the_active_file() {
     let mut app = title_test_app(true);
     app.run("file.new", json!({"width": 100, "height": 100, "name": "foo.svg"})).unwrap();
-    assert_eq!(super::window_title(&app), "foo.svg \u{2014} VectorCraft");
+    assert_eq!(super::window_title(&app), "foo.svg \u{2014} ICASYS Vectores");
     // Unsaved changes gain a `*` prefix, like the `*` in the document tabs.
     app.run("shape.rectangle", json!({"x": 0, "y": 0, "width": 10, "height": 10})).unwrap();
-    assert_eq!(super::window_title(&app), "*foo.svg \u{2014} VectorCraft");
+    assert_eq!(super::window_title(&app), "*foo.svg \u{2014} ICASYS Vectores");
 }
 
 #[test]
@@ -1562,11 +1562,11 @@ fn sync_window_title_sends_only_on_change() {
     let ctx = egui::Context::default();
     crate::theme::install_fonts(&ctx);
     super::sync_window_title(&mut app, &ctx);
-    assert_eq!(app.last_window_title, "VectorCraft");
+    assert_eq!(app.last_window_title, "ICASYS Vectores");
     let mut out = ctx.run_ui(egui::RawInput::default(), |_| {});
     out.textures_delta.clear();
     let cmds = out.viewport_output.remove(&egui::ViewportId::ROOT).map(|v| v.commands).unwrap_or_default();
-    assert!(cmds.iter().any(|c| matches!(c, egui::ViewportCommand::Title(t) if t == "VectorCraft")), "{cmds:?}");
+    assert!(cmds.iter().any(|c| matches!(c, egui::ViewportCommand::Title(t) if t == "ICASYS Vectores")), "{cmds:?}");
     // Same document state again: the cached title stops a repeat command.
     super::sync_window_title(&mut app, &ctx);
     let mut out = ctx.run_ui(egui::RawInput::default(), |_| {});
@@ -1575,7 +1575,7 @@ fn sync_window_title_sends_only_on_change() {
     assert!(!cmds.iter().any(|c| matches!(c, egui::ViewportCommand::Title(_))), "repeat Title: {cmds:?}");
     app.run("file.new", json!({"width": 100, "height": 100, "name": "foo.svg"})).unwrap();
     super::sync_window_title(&mut app, &ctx);
-    assert_eq!(app.last_window_title, "foo.svg \u{2014} VectorCraft");
+    assert_eq!(app.last_window_title, "foo.svg \u{2014} ICASYS Vectores");
 }
 /// Draw actual tabs, including the same per-frame view synchronization as the app.
 fn artboard_document_tabs_frame(app: &mut crate::VectorcraftApp, ctx: &egui::Context, events: Vec<egui::Event>) -> Vec<egui::Rect> {
